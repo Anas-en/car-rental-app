@@ -1,5 +1,5 @@
 import os
-from flask import Flask , jsonify
+from flask import Flask, jsonify
 from dotenv import load_dotenv
 from werkzeug.security import generate_password_hash, check_password_hash
 
@@ -8,7 +8,6 @@ load_dotenv()  # Load .env file
 from config import Config
 from extensions import db, migrate, jwt
 from flask_cors import CORS
-
 
 
 def create_app():
@@ -26,18 +25,22 @@ def create_app():
     from models.booking import Booking
     from models.payments import Payment
 
+    from routes.test_routes import test_bp
+    app.register_blueprint(test_bp, url_prefix ="/api/test")
+    
+    from routes.cars_routes import car_bp
+    app.register_blueprint(car_bp, url_prefix = "/api/cars")
+    
     from routes.auth_routes import auth_bp
-    app.register_blueprint(auth_bp,url_prefix = "/api/auth")
+    app.register_blueprint(auth_bp, url_prefix="/api/auth")
 
+    
+    print(app.url_map)
 
     return app
 
+
 app = create_app()
 
-# list = [{"name":"anas","class":"middle"},
-#         {"name":"anas","class":"middle"}]
-# @app.route("/")
-# def index():
-#     return jsonify(list)
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, host="127.0.0.1", port = 5001)

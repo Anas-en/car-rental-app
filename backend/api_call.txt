@@ -1,0 +1,30 @@
+{
+  "email": "anas@email.com",
+  "password": "123456",
+  "name":"abbas",
+  "role":"owner"
+}
+{
+  "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc3MjU2MjM1NSwianRpIjoiOTc1NzBiZDItM2FjOS00OGQwLTk1YzUtOGYxMjUwZWE0NDc2IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjMiLCJuYmYiOjE3NzI1NjIzNTUsImNzcmYiOiJhNmJkZDY2NC03MmMyLTRiNzItOGUzMy0xZDVhMzFhYTA5YzEiLCJleHAiOjE3NzI1NjMyNTV9.3JpbJMIU8xNJKaujJYbywUSjQEwt7miiN-KYDp0W__A",
+  "role": "renter",
+  "user_id": 3
+}
+{
+  "brand": "Toyota",
+  "model": "Fortuner",
+  "price_per_day": 2500,
+  "city": "Agra"
+}
+
+
+{
+  "email": "ahmad@email.com",
+  "password": "123456",
+  "name":"ahmad",
+  "role":"owner"
+}
+{
+  "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc3MjU2Mjc4MCwianRpIjoiMzMxN2NhNzMtOGE4Mi00YzFiLWIxNzYtZWRiN2MzNGE0M2VhIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjQiLCJuYmYiOjE3NzI1NjI3ODAsImNzcmYiOiJhZjkzMGE3My00OGI0LTQxYWYtYTIwOS1mODYwOWU1ZTgxNGUiLCJleHAiOjE3NzI1NjM2ODB9.6dEC6IUANMYv6Kn7_9rvzwrLHd3srlGfRQTokNlYmqs",
+  "role": "owner",
+  "user_id": 4
+}
