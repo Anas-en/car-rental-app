@@ -1,0 +1,68 @@
+CREATE TABLE users (
+    user_id SERIAL PRIMARY KEY,
+    full_name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    phone VARCHAR(15) UNIQUE NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    role VARCHAR(20) CHECK (role IN ('owner','customer')) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+
+CREATE TABLE cars (
+    car_id SERIAL PRIMARY KEY,
+    owner_id INT NOT NULL,
+    brand VARCHAR(50) NOT NULL,
+    model VARCHAR(50) NOT NULL,
+    year INT CHECK (year >= 2000),
+    price_per_day NUMERIC(10,2) NOT NULL,
+    location VARCHAR(100) NOT NULL,
+    availability BOOLEAN DEFAULT TRUE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT fk_owner
+        FOREIGN KEY (owner_id)
+        REFERENCES users(user_id)
+        ON DELETE CASCADE
+);
+
+CREATE TABLE payments (
+    payment_id SERIAL PRIMARY KEY,
+    booking_id INT NOT NULL,
+    amount NUMERIC(10,2) NOT NULL,
+    payment_method VARCHAR(30),
+    payment_status VARCHAR(20) CHECK (payment_status IN ('success','failed','pending')) DEFAULT 'pending',
+    payment_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT fk_booking
+        FOREIGN KEY (booking_id)
+        REFERENCES bookings(booking_id)
+        ON DELETE CASCADE
+);
+
+CREATE TABLE bookings (
+    booking_id SERIAL PRIMARY KEY,
+    car_id INT NOT NULL,
+    owner_id INT NOT NULL,
+    customer_id INT NOT NULL,
+    start_date DATE NOT NULL,
+    end_date DATE NOT NULL,
+    total_amount NUMERIC(10,2),
+    status VARCHAR(20) 
+        CHECK (status IN ('pending','confirmed','cancelled','completed')) 
+        DEFAULT 'pending',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+
+    CONSTRAINT fk_car
+        FOREIGN KEY (car_id)
+        REFERENCES cars(car_id)
+        ON DELETE CASCADE,
+
+    CONSTRAINT fk_owner
+        FOREIGN KEY (owner_id)
+        REFERENCES users(user_id)
+        ON DELETE CASCADE,
+
+    CONSTRAINT fk_customer
+        FOREIGN KEY (customer_id)
+        REFERENCES users(user_id)
+        ON DELETE CASCADE
+);
