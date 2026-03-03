@@ -19,3 +19,7 @@ class Booking(db.Model):
     status = db.Column(db.String(20),default = "pending") #pending, confirmed , cancelled
 
     created_at = db.Column(db.DateTime , default = datetime.utcnow)
+
+    #Relationship 
+    customer = db.relationship("User",foreign_keys=[customer_id] ,backref = "customer_bookings" )
+    owner =    db.relationship("User",foreign_keys=[owner_id],backref="owned_bookings")

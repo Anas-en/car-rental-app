@@ -15,4 +15,4 @@ class Cars(db.Model):
     created_at = db.Column(db.DateTime , default=datetime.utcnow)
 
     #Relationship 
-    bookings = db.relationship("Booking",backref="car", lazy=True , cascade="all , delete")
+    bookings = db.relationship("Booking",backref="car", lazy=True , cascade="all, delete")

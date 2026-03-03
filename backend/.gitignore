@@ -4,3 +4,5 @@ __pycache__/
 car_rental.sql
 Flask_Postgres_Setup_Summary.txt
 summary2.txt
+
+secret.py
