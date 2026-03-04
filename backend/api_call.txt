@@ -1,30 +1,46 @@
 {
-  "email": "anas@email.com",
-  "password": "123456",
-  "name":"abbas",
-  "role":"owner"
+  "name": "Rahul Sharma",
+  "email": "rahul@test.com",
+  "password": "password123"
 }
 {
-  "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc3MjU2MjM1NSwianRpIjoiOTc1NzBiZDItM2FjOS00OGQwLTk1YzUtOGYxMjUwZWE0NDc2IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjMiLCJuYmYiOjE3NzI1NjIzNTUsImNzcmYiOiJhNmJkZDY2NC03MmMyLTRiNzItOGUzMy0xZDVhMzFhYTA5YzEiLCJleHAiOjE3NzI1NjMyNTV9.3JpbJMIU8xNJKaujJYbywUSjQEwt7miiN-KYDp0W__A",
-  "role": "renter",
-  "user_id": 3
+  "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc3MjYxNzU1NCwianRpIjoiNTI3NTA0ZGUtODdkYi00NjVjLWEyZjUtZDM1MTEwNjA5YTUxIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjEiLCJuYmYiOjE3NzI2MTc1NTQsImNzcmYiOiI5Y2ZlZGZlMS1hYmNlLTQ1OTQtOTE3Yy1kMDI3ZDYxMGRiNzMiLCJleHAiOjE3NzI2MTg0NTR9.N2qJ-ZRyhy91vTyHPEgTqow2e-d_C4MNwGeiT3M71Bk",
+  "user_id": 1
 }
 {
-  "brand": "Toyota",
-  "model": "Fortuner",
-  "price_per_day": 2500,
-  "city": "Agra"
+  "car_id": 1,
+  "message": "car added successufully"
 }
 
 
+
 {
-  "email": "ahmad@email.com",
-  "password": "123456",
-  "name":"ahmad",
-  "role":"owner"
+  "name": "Anas Khan",
+  "email": "anas@test.com",
+  "password": "password123"
 }
+
 {
-  "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc3MjU2Mjc4MCwianRpIjoiMzMxN2NhNzMtOGE4Mi00YzFiLWIxNzYtZWRiN2MzNGE0M2VhIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjQiLCJuYmYiOjE3NzI1NjI3ODAsImNzcmYiOiJhZjkzMGE3My00OGI0LTQxYWYtYTIwOS1mODYwOWU1ZTgxNGUiLCJleHAiOjE3NzI1NjM2ODB9.6dEC6IUANMYv6Kn7_9rvzwrLHd3srlGfRQTokNlYmqs",
-  "role": "owner",
-  "user_id": 4
+  "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc3MjYxNzU3NSwianRpIjoiYmUxMjAxNjEtMmZkNy00YmJhLWFhZGUtYmEzOTNiODY1MTJmIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjIiLCJuYmYiOjE3NzI2MTc1NzUsImNzcmYiOiJhOGUzZmEyNy0yMzFmLTQ3Y2MtODJlZS1kY2E4ODY3ODI5OTQiLCJleHAiOjE3NzI2MTg0NzV9.vMb5zi7XJMHbJYSkyY_es7fT5Ay8rHnaFAMCgRY-8h4",
+  "user_id": 2
 }
+
+{
+  "booking_id": 1,
+  "message": "booking created successfully",
+  "total_amount": 7500.0
+}
+customer bookings :
+[
+  {
+    "booking_id": 1,
+    "car_brand": "Toyota",
+    "car_id": 1,
+    "car_model": "Innova",
+    "car_owner_name": "Rahul Sharma",
+    "end_date": "2026-04-15",
+    "start_date": "2026-04-10",
+    "status": "pending",
+    "total_amount": 7500.0
+  }
+]

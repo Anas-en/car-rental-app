@@ -19,7 +19,7 @@ class Booking(db.Model):
     total_amount = db.Column(db.Numeric(10, 2), nullable=False)
     status = db.Column(
         db.String(20), default="pending"
-    )  # pending, confirmed , cancelled
+    )  # pending, confirmed , cancelled  , completed
 
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
 
@@ -27,4 +27,9 @@ class Booking(db.Model):
     customer = db.relationship(
         "User", foreign_keys=[customer_id], backref="customer_bookings"
     )
-    owner = db.relationship("User", foreign_keys=[owner_id], backref="owned_bookings")
+    
+    # owner = db.relationship("User", foreign_keys=[owner_id], backref="owned_bookings")
+    # car = db.relationship ("Cars",backref = "bookings")
+    #beacuse  backref ="car " already creates it 
+    
+    #owner can be accessed using Booking.car.ow

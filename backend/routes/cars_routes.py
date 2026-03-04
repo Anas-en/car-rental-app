@@ -17,9 +17,6 @@ def create_car():
     user = User.query.get(current_user_id)
     if not user:
         return jsonify({"message": "User not found"}), 404
-    
-    # if user.role != "owner":
-    #     return jsonify({"message": "only owners can add cars"}), 403
 
     data = request.get_json()
     
@@ -48,7 +45,10 @@ def create_car():
     db.session.add(car)
     db.session.commit()
 
-    return jsonify({"message": "car added successufully"}), 201
+    return jsonify({
+        "message": "car added successufully",
+        "car_id":car.car_id
+    }), 201
 
 
 # GET ALL CARS
