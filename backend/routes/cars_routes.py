@@ -18,8 +18,8 @@ def create_car():
     if not user:
         return jsonify({"message": "User not found"}), 404
     
-    if user.role != "owner":
-        return jsonify({"message": "only owners can add cars"}), 403
+    # if user.role != "owner":
+    #     return jsonify({"message": "only owners can add cars"}), 403
 
     data = request.get_json()
     

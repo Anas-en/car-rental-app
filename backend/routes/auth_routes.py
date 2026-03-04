@@ -13,19 +13,11 @@ def register():
     name = data.get("name")
     email = data.get("email")
     password = data.get("password")
-    role = data.get("role", "renter")  # default to renter if not provided
-
-    if role:
-        role = role.strip().lower()
-
-    # Optional
-    if role not in ["owner", "renter"]:
-        return jsonify({"message": "Invalid role"}), 400
 
     if User.query.filter_by(email=email).first():
         return jsonify({"message": "Email already exists"}), 400
 
-    user = User(name=name, email=email, role=role)
+    user = User(name=name, email=email)
     User.set_password(user, password)
 
     db.session.add(user)
@@ -50,8 +42,7 @@ def login():
             jsonify(
                 {
                     "access_token": access_token,
-                    "user_id": user.user_id,
-                    "role": user.role,
+                    "user_id": user.user_id
                 }
             ),
             200,
